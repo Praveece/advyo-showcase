@@ -1,60 +1,51 @@
-Advyo — Q Developer + AWS Showcase
+# Advyo — Q Developer Frontend Showcase
 
-Advyo is an AI-first supply-chain assistant.
-This repository showcases the public-facing static pages (homepage, login, FAQ) that were initially written manually and later refined using Amazon Q Developer.
-The private backend and authenticated React dashboards are excluded; only safe screenshots and evidence are provided.
+Advyo is an AI-first supply-chain assistant.  
+This repository showcases the **public static pages** (homepage, login, FAQ) that were **manually built and later refined using Amazon Q Developer**.  
+All backend logic and authenticated React dashboards remain private; only safe screenshots are provided for judges.
 
-What this repo contains
+---
 
-src/ — static public pages (homepage, login, FAQ)
+## What this repo contains
+- `src/` — static public pages (homepage, login, FAQ)
+- `assets/` — screenshots (including dashboard UI) + short demo clip
+- `demo/` — minimal standalone HTML snippet for judges
+- `aws-usage.md` — summary of AWS EC2 + Nginx + SSH workflow
+- `q-workflow.md` — manual → Q Developer refinement steps
+- `demo-instructions.md` — judge walkthrough for reviewing the project
 
-assets/ — screenshots (including internal dashboard visuals) + short demo clips
+---
 
-demo/ — minimal standalone UI snippet (HTML-only)
+## Live Demo
+The public UI is deployed on AWS:
 
-aws-usage.md — how EC2 + Nginx + VS Code Remote SSH were used
+- **Homepage:** https://advyo.in  
+- **Login:** https://advyo.in/login  
+- **FAQ:** https://advyo.in/faq  
 
-q-workflow.md — manual → Q Developer refinement workflow
+These are served through **Nginx on an AWS EC2 instance**.
 
-demo-instructions.md — judge walkthrough of the live demo
+---
 
-Live Demo (Recommended for Judges)
+## How to preview locally (optional)
+No build step required. The project is fully static.
 
-Homepage → https://advyo.in
+Open any of the files in `src/` directly in a browser:
+- `index.html`
+- `login.html`
+- `faq.html`
 
-Login → https://advyo.in/login
+---
 
-FAQ → https://advyo.in/faq
+## Why this submission fits the hackathon
+- Demonstrates **Q Developer–assisted development**
+- Uses **AWS EC2 + Nginx** for hosting and workflow
+- Provides **screenshots + evidence artifacts** for verification
+- Fully functional **live demo** accessible publicly
+- Backend and dashboards remain private and sanitized for security
 
-These pages are served from AWS EC2 + Nginx and reflect Q Developer–refined code.
+---
 
-How to preview locally (optional)
-
-Since the project is static:
-
-Open any file inside /src/ directly in your browser
-
-homepage.html
-
-login.html
-
-faq.html
-
-No build steps, no dependencies.
-
-Why this project is relevant
-
-This submission demonstrates:
-
-Real Amazon Q Developer usage for UI refinement
-
-Real AWS infrastructure (EC2, Nginx, SSH workflow)
-
-A functioning live product accessible publicly
-
-Clear separation of safe public pages vs. private business logic
-
-Contact
-
-PRAVEEN KUMAR
-praveengdr1@gmail.com
+## Contact
+**PRAVEEN KUMAR**  
+Email: **praveengdr1@gmail.com**
