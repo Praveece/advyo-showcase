@@ -1,15 +1,61 @@
-# AWS Usage — Advyo
+AWS Usage Summary — Advyo
 
-- **Amazon Q Developer**
-  - Used inside VS Code to generate, iterate and refine frontend pages and agent prompts.
-  - Helped accelerate UI scaffolding (homepage, login, FAQ) and produce consistent UX components.
+This document outlines how AWS infrastructure was used during the development and refinement of the Advyo frontend for the AWS × DoraHacks Q Hackathon.
 
-- **Amazon EC2**
-  - Hosted the Advyo backend test instance (private); used for staging API endpoints and worker scripts.
-  - EC2 console screenshots (in /assets) show instance and basic app logs used for verification.
+1. EC2 Instance for Development
 
-- **Optional (if applicable)**
-  - **S3**: static assets and screenshots storage for demo.
-  - **CloudWatch**: logging and basic metrics for worker scripts.
+A dedicated AWS EC2 Ubuntu instance was used as the primary development environment.
 
-Proof: demo video and screenshots in `/assets` show VS Code (pre-Q Developer), the Q Developer output, and EC2 console.
+All frontend files were created, edited, and stored directly inside the EC2 machine.
+
+The path used during build and refinement:
+
+/var/www/html/advyo/
+
+Using EC2 demonstrates:
+
+Real cloud-based development
+
+Remote editing workflow
+
+Persistent cloud environment for Q Developer integration
+
+2. Nginx for Hosting
+
+The EC2 instance used Nginx to serve the frontend pages.
+
+This enabled a clean preview of the live interface while refining the UI.
+
+Nginx usage confirms:
+
+Production-aligned hosting
+
+Real deployment footprint
+
+Judge-verifiable architecture
+
+3. VS Code Remote Development
+
+VS Code Remote SSH was used to connect directly to the EC2 machine.
+
+All coding, manual edits, and Q Developer-assisted refinements were performed through this workflow.
+
+Evidence included in assets/:
+
+Screenshots showing:
+
+VS Code connected to EC2
+
+Editing HTML/CSS/JS inside /var/www/html/advyo/
+
+Q Developer suggestions being applied
+
+4. Why This Matters for the Hackathon
+
+AWS services were used not just for hosting, but as an active development workspace, showing:
+
+Practical EC2 usage
+
+Real-world cloud development pattern
+
+Clean integration with Amazon Q Developer
