@@ -19,4 +19,3 @@ This repo is intended for quick deployment to GitHub Pages or Vercel for hackath
 
 ## Contact
 Maintainer: PRAVEEN KUMAR — praveengdr1@gmail.com.
-
