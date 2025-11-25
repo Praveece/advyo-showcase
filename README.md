@@ -1,15 +1,22 @@
-# Advyo – AI Supply Chain Assistant (Showcase)
+# Advyo — Q Developer Frontend Showcase
 
-**Short:** Advyo automates vendor/shipment decision flows using agent-driven workflows.
+Short: Advyo is an AI-first supply-chain assistant. This public repo showcases the frontend pages (homepage, login, FAQ) generated and refined with Amazon Q Developer. Backend logic is private; a sanitized demo and screenshots are provided for judges.
 
 ## What this repo contains
-- assets/: screenshots + demo clip
-- demo/: minimal runnable snippet (safe)
-- aws-usage.md: description of AWS services used
+- `src/` — public pages (homepage, login, FAQ)
+- `assets/` — screenshots + short demo clip
+- `demo/` — minimal runnable snippet (safe)
+- `aws-usage.md` — explicit description of AWS services used
+- `demo-instructions.md` — how to run the frontend locally and test
 
-## How to run demo (local)
-1. `node demo/sample.js`
-2. Demo prints a simulated agent decision flow.
+## How to run (local)
+1. `npm install` (if project uses a package.json)
+2. `npm run dev` or `npx http-server ./src` (if static)
+3. Open `http://localhost:3000` or the port shown.
 
-## AWS usage (summary)
-See `aws-usage.md`.
+## Deploy
+This repo is intended for quick deployment to GitHub Pages or Vercel for hackathon judges.
+
+## Contact
+Maintainer: PRAVEEN KUMAR — add email/contact method.
+
