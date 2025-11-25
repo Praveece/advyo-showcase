@@ -37,25 +37,5 @@ This document outlines the streamlined system blueprint showcasing practical AWS
 
 ## 🔹 Architecture Diagram (Text Representation)
 
-+------------------------------------------------+
-|                 CLIENT LAYER                  |
-|     Static HTML / Inline CSS / Inline JS       |
-+------------------------------------------------+
-                      |
-                      v
-+------------------------------------------------+
-|                NGINX WEB SERVER                |
-|   Serves static assets from /var/www/html      |
-+------------------------------------------------+
-                      |
-                      v
-+------------------------------------------------+
-|                 AWS EC2 INSTANCE               |
-|   Ubuntu + VS Code Remote SSH Development       |
-+------------------------------------------------+
-                      |
-                      v
-+------------------------------------------------+
-|         Q DEVELOPER + MANUAL WORKFLOW          |
-|  UI refinement / HTML cleanup / optimization   |
-+------------------------------------------------+
+Client → Nginx → EC2 → Q Developer Workflow
+
