@@ -1,50 +1,48 @@
-
 # Demo Flow – ADVYO
 
-This document summarizes the workflow captured in the provided screen recordings.
+This document summarizes the complete workflow demonstrated through the delivered screen recordings and artifacts.
 
 ---
 
 ## 🔹 Phase 1 – Manual Development (Recorded)
 
-- VS Code edits performed before Q Developer installation
-- HTML pages built from scratch
-- Inline components and layout implemented manually
-- Screen recording included in `/assets/recordings/`
+- Initial coding executed in VS Code **before** installing Q Developer  
+- Static HTML pages created from scratch (homepage, login, FAQ)  
+- Layout, inline CSS, and inline JS built manually  
+- Full screen recording available in `/assets/recordings/`
 
 ---
 
 ## 🔹 Phase 2 – Q Developer Enhancement
 
-- Q Developer used to streamline UI refinement
-- Generated optimized structures
-- Inserted modular components faster than manual workflow
-- Reduced repetitive coding tasks
-
-This hybrid approach demonstrates the core value proposition of the hackathon track.
+- Q Developer activated to refine UI and reorganize structure  
+- Cleaned HTML, improved layouts, and accelerated component creation  
+- Eliminated repetitive edits and improved efficiency  
+- Demonstrates the required “manual → Q-assisted improvement” workflow
 
 ---
 
 ## 🔹 Phase 3 – Deployment on AWS
 
-- Files moved directly into `/var/www/html/`
-- Nginx served pages instantly
-- All testing performed live on EC2 using browser access
-- Verified availability + page load behavior
+- Final files placed inside `/var/www/html/` on an EC2 instance  
+- Nginx served the pages immediately without additional configuration  
+- Testing performed in a live environment using EC2 public URL  
+- Ensures a production-grade demo path for judges
 
 ---
 
 ## 🔹 Phase 4 – Repository Curation
 
-- Raw HTML exported from EC2 into `/src/`
-- Screenshots + recordings placed under `/assets/`
-- Documentation added to `/docs/`
+- Static HTML exported from EC2 into `/src/`  
+- Screenshots and demo clips organized under `/assets/`  
+- Documentation stored in `/docs/` for structured review  
+- No backend code included; this repository is frontend-focused and safe for public submission
 
 ---
 
 ## 🔹 Demo Deliverables
 
-- Working UI hosted on AWS
-- Live interaction demo
-- Proven workflow showing Q Developer in action
-- Clean GitHub repository for review
+- Fully working public UI hosted on AWS  
+- Verified manual + Q Developer workflow recordings  
+- Clean, judge-ready GitHub repository  
+- Clear evidence of AWS usage and Q-accelerated development  
