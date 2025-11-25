@@ -18,5 +18,5 @@ Short: Advyo is an AI-first supply-chain assistant. This public repo showcases t
 This repo is intended for quick deployment to GitHub Pages or Vercel for hackathon judges.
 
 ## Contact
-Maintainer: PRAVEEN KUMAR — add email/contact method.
+Maintainer: PRAVEEN KUMAR — praveengdr1@gmail.com.
 
