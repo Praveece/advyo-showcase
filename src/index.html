@@ -1,1 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>advyo - AI-Powered Supply Chain Intelligence Platform</title>
+  <meta name="description" content="Transform your supply chain with advyo's AI-powered platform. Reduce costs by 25%, improve accuracy by 40% with demand forecasting, real-time tracking & risk management." />
+  <meta name="keywords" content="supply chain AI, demand forecasting, inventory management, supply chain visibility, logistics optimization, AI analytics" />
+  <meta name="author" content="Karpath Infotech Pvt Ltd" />
+  <link rel="canonical" href="https://advyo.in" />
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="advyo - AI-Powered Supply Chain Intelligence" />
+  <meta property="og:description" content="Transform your supply chain with AI. Reduce costs by 25%, improve accuracy by 40% with our intelligent platform." />
+  <meta property="og:url" content="https://advyo.in" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_IN" />
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="advyo - AI-Powered Supply Chain Intelligence" />
+  <meta name="twitter:description" content="Transform your supply chain with AI. Reduce costs by 25%, improve accuracy by 40%." />
+  
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "advyo",
+    "description": "AI-powered supply chain intelligence platform for demand forecasting, inventory optimization, and real-time visibility",
+    "url": "https://advyo.in",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "INR",
+      "lowPrice": "7999",
+      "highPrice": "87999"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "Karpath Infotech Pvt Ltd",
+      "url": "https://advyo.in",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1st Floor, A Square, Kuzhivelippady",
+        "addressLocality": "Ernakulam",
+        "addressRegion": "Kerala",
+        "postalCode": "683561",
+        "addressCountry": "IN"
+      }
+    }
+  }
+  </script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #111827;
+      color: #f9fafb;
+      overflow-x: hidden;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .package {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .package:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px #048AFF;
+    }
+    .modal {
+      display: none;
+    }
+    .mobile-menu {
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+    }
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+    
+    /* Mobile fixes */
+    @media (max-width: 768px) {
+      [data-aos] {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      
+      .package {
+        transform: none !important;
+      }
+      
+      .package:hover {
+        transform: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center py-6 px-6 md:px-16 border-b border-gray-800">
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold text-[#048AFF] tracking-wide lowercase">
+        <a href="/">advyo</a>
+      </h1>
+      <!-- <p class="text-sm text-gray-400 mt-1">Intelligent Supply Networks</p> -->
+    </div>
+    
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#solutions" class="text-gray-300 hover:text-[#048AFF] transition">Solutions</a>
+      <a href="#pricing" class="text-gray-300 hover:text-[#048AFF] transition">Pricing</a>
+      <a href="#about" class="text-gray-300 hover:text-[#048AFF] transition">About</a>
+      <a href="/login.html" class="bg-[#048AFF] text-black px-3 py-1.5 rounded-md text-sm font-medium hover:bg-blue-600 transition">Login</a>
+    </nav>
+    
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-[#048AFF]">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+    
+    <!-- Mobile Navigation -->
+    <nav id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-80 bg-[#1f2937] border-l border-gray-700 flex flex-col p-6 md:hidden z-50">
+      <div class="flex justify-between items-center mb-8">
+        <h2 class="text-[#048AFF] font-bold text-xl lowercase">advyo</h2>
+        <button id="close-menu" class="text-gray-300 hover:text-[#048AFF]">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="space-y-6">
+        <a href="#solutions" class="text-gray-300 hover:text-[#048AFF] transition block text-lg">Solutions</a>
+        <a href="#pricing" class="text-gray-300 hover:text-[#048AFF] transition block text-lg">Pricing</a>
+        <a href="#about" class="text-gray-300 hover:text-[#048AFF] transition block text-lg">About</a>
+        <a href="/login.html" class="bg-[#048AFF] text-black px-4 py-2 rounded-lg font-semibold hover:bg-blue-600 transition inline-block mt-4">Login</a>
+      </div>
+    </nav>
+    
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero text-center flex flex-col justify-center min-h-[calc(100vh-80px)] px-6">
+    <div>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">Transform Your Supply Chain<br>with <span class="text-[#048AFF]">AI Intelligence</span></h2>
+      <p class="text-gray-400 text-lg md:text-xl mb-4 max-w-2xl mx-auto">Reduce costs by 25%, improve accuracy by 40%, and gain real-time visibility across your entire supply chain network.</p>
+      <p class="text-[#048AFF] font-semibold mb-8">Quick setup in days, not months • Minimal IT involvement • Fast results</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button id="hero-cta-btn" class="bg-[#048AFF] text-black px-8 py-3 rounded-lg font-semibold text-lg hover:bg-blue-600 transition flex items-center justify-center space-x-2">          
+          <span>See Your Supply Chain in AI</span>
+        </button>
+        <button id="demo-btn" class="border border-[#048AFF] text-[#048AFF] px-8 py-3 rounded-lg font-semibold text-lg hover:bg-[#048AFF] hover:text-black transition flex items-center justify-center space-x-2">          
+          <span>2-Min Live Demo</span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions" class="py-20 px-6 md:px-16 bg-[#1a202c]">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-[#f9fafb] mb-4">Complete Supply Chain Intelligence</h2>
+      <p class="text-[#d1d5db] text-lg max-w-2xl mx-auto">Our AI-powered platform provides end-to-end visibility and optimization for modern supply chains</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      
+      <div class="bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 transition transform hover:scale-105 hover:border-[#048AFF]">
+        <div class="text-[#048AFF] text-4xl mb-4">🎯</div>
+        <h3 class="font-semibold text-xl text-[#f9fafb] mb-3">Demand Forecasting</h3>
+        <p class="text-[#d1d5db] text-sm mb-4">ML-powered predictions with 95% accuracy for inventory optimization and demand planning</p>
+        <ul class="text-xs text-gray-500 space-y-1">
+          <li>• Seasonal trend analysis</li>
+          <li>• Multi-location forecasting</li>
+          <li>• Real-time adjustments</li>
+        </ul>
+      </div>
+      
+      <div class="bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 transition transform hover:scale-105 hover:border-[#048AFF]">
+        <div class="text-[#048AFF] text-4xl mb-4">🌐</div>
+        <h3 class="font-semibold text-xl text-[#f9fafb] mb-3">Supply Chain Visibility</h3>
+        <p class="text-[#d1d5db] text-sm mb-4">Real-time tracking across suppliers, warehouses, and distribution networks</p>
+        <ul class="text-xs text-gray-500 space-y-1">
+          <li>• Live shipment tracking</li>
+          <li>• Vendor performance metrics</li>
+          <li>• Inventory level monitoring</li>
+        </ul>
+      </div>
+      
+      <div class="bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 transition transform hover:scale-105 hover:border-[#048AFF]">
+        <div class="text-[#048AFF] text-4xl mb-4">⚠️</div>
+        <h3 class="font-semibold text-xl text-[#f9fafb] mb-3">Risk Management</h3>
+        <p class="text-[#d1d5db] text-sm mb-4">Proactive risk detection and mitigation with automated alert systems</p>
+        <ul class="text-xs text-gray-500 space-y-1">
+          <li>• Supply disruption alerts</li>
+          <li>• Quality issue detection</li>
+          <li>• Compliance monitoring</li>
+        </ul>
+      </div>
+      
+      <div class="bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 transition transform hover:scale-105 hover:border-[#048AFF]">
+        <div class="text-[#048AFF] text-4xl mb-4">📊</div>
+        <h3 class="font-semibold text-xl text-[#f9fafb] mb-3">Analytics & Insights</h3>
+        <p class="text-[#d1d5db] text-sm mb-4">Custom dashboards with actionable insights and performance KPIs</p>
+        <ul class="text-xs text-gray-500 space-y-1">
+          <li>• Executive dashboards</li>
+          <li>• Cost optimization reports</li>
+          <li>• Performance benchmarking</li>
+        </ul>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section id="pricing" class="py-20 px-6 md:px-16 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-[#f9fafb] mb-4">Choose Your Plan</h2>
+    <p class="text-[#d1d5db] text-lg mb-8 max-w-2xl mx-auto">Proof of concept in 14 days. Full implementation in 2-4 weeks.</p>
+    
+    <!-- Billing Toggle -->
+    <div class="flex items-center justify-center mb-12">
+      <span class="text-gray-400 mr-3">Monthly</span>
+      <button id="billing-toggle" class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-600 transition-colors focus:outline-none">
+        <span class="inline-block h-4 w-4 transform rounded-full bg-white transition-transform translate-x-1"></span>
+      </button>
+      <span class="text-[#048AFF] ml-3">Annual <span class="text-sm">(Save 20%)</span></span>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+      
+      <!-- Basic Plan -->
+      <div class="package bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[#048AFF] text-xl font-bold mb-2">BASIC</h3>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-white monthly-price">₹14,999</p>
+            <p class="text-2xl font-bold text-white annual-price hidden">₹179,988</p>
+            <p class="text-sm text-gray-400 monthly-price">per month</p>
+            <p class="text-sm text-gray-400 annual-price hidden">per year</p>
+
+          </div>
+          <ul class="text-sm text-[#d1d5db] text-left mb-6 space-y-2">
+            <li>✔ Up to 1,000 SKUs</li>
+            <li>✔ 1 location</li>
+            <li>✔ Up to 10 vendors</li>
+            <li>✔ Core KPI dashboard</li>
+            <li>✔ Vendor performance basics</li>
+            <li>✔ Standard alerts</li>
+            <li>✔ All ERP integrations (SAP, Tally, Zoho, etc.)</li>
+            <li>✔ All logistics providers (Delhivery, BlueDart, etc.)</li>
+            <li>✔ Implementation included</li>
+            <li>✔ Email support</li>
+          </ul>
+          <div class="text-xs text-gray-400 mt-4 p-2 bg-[#111827] rounded">
+            <strong>Setup:</strong> ₹9,999 one-time (included in first month)
+          </div>
+        </div>
+        <button class="subscribe-plan bg-[#048AFF] text-black font-semibold py-3 rounded-lg hover:bg-blue-600 transition" data-plan="basic">Get Started</button>
+      </div>
+      
+      <!-- Growth Plan -->
+      <div class="package bg-[#1f2937] border border-[#048AFF] rounded-xl p-6 flex flex-col justify-between relative">
+        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+          <span class="bg-[#048AFF] text-black px-3 py-1 rounded-full text-xs font-semibold">POPULAR</span>
+        </div>
+        <div>
+          <h3 class="text-[#048AFF] text-xl font-bold mb-2">GROWTH</h3>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-white monthly-price">₹34,999</p>
+            <p class="text-2xl font-bold text-white annual-price hidden">₹419,988</p>
+            <p class="text-sm text-gray-400 monthly-price">per month</p>
+            <p class="text-sm text-gray-400 annual-price hidden">per year</p>
+
+          </div>
+          <ul class="text-sm text-[#d1d5db] text-left mb-6 space-y-2">
+            <li>✔ Up to 5,000 SKUs</li>
+            <li>✔ 3 locations</li>
+            <li>✔ Up to 25 vendors</li>
+            <li>✔ Advanced KPI engine</li>
+            <li>✔ Vendor scoring</li>
+            <li>✔ ESG logging</li>
+            <li>✔ PDF/CSV reports</li>
+            <li>✔ All ERP integrations (SAP, Oracle, NetSuite, etc.)</li>
+            <li>✔ All logistics providers (FedEx, Gati, XpressBees, etc.)</li>
+            <li>✔ Full implementation included</li>
+            <li>✔ Email + chat support</li>
+          </ul>
+          <div class="text-xs text-gray-400 mt-4 p-2 bg-[#111827] rounded">
+            <strong>Setup:</strong> ₹19,999 one-time (included in first month)
+          </div>
+        </div>
+        <button class="subscribe-plan bg-[#048AFF] text-black font-semibold py-3 rounded-lg hover:bg-blue-600 transition" data-plan="growth">Get Started</button>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="package bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[#048AFF] text-xl font-bold mb-2">PRO</h3>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-white monthly-price">₹79,999</p>
+            <p class="text-2xl font-bold text-white annual-price hidden">₹959,988</p>
+            <p class="text-sm text-gray-400 monthly-price">per month</p>
+            <p class="text-sm text-gray-400 annual-price hidden">per year</p>
+
+          </div>
+          <ul class="text-sm text-[#d1d5db] text-left mb-6 space-y-2">
+            <li>✔ Up to 25,000 SKUs</li>
+            <li>✔ 10 locations</li>
+            <li>✔ Up to 75 vendors</li>
+            <li>✔ Full analytics suite</li>
+            <li>✔ Smart triggers & escalations</li>
+            <li>✔ All ERP systems + custom APIs</li>
+            <li>✔ All logistics + custom integrations</li>
+            <li>✔ ESG audit & compliance</li>
+            <li>✔ Complete implementation</li>
+            <li>✔ Priority support</li>
+          </ul>
+          <div class="text-xs text-gray-400 mt-4 p-2 bg-[#111827] rounded">
+            <strong>Setup:</strong> ₹39,999 one-time (included in first month)
+          </div>
+        </div>
+        <button class="subscribe-plan bg-[#048AFF] text-black font-semibold py-3 rounded-lg hover:bg-blue-600 transition" data-plan="pro">Get Started</button>
+      </div>
+
+      <!-- Enterprise Plan -->
+      <div class="package bg-[#1f2937] border border-[#7e7e7eff] rounded-xl p-6 flex flex-col justify-between">
+        <div>
+          <h3 class="text-[#048AFF] text-xl font-bold mb-2">ENTERPRISE</h3>
+          <div class="mb-4">
+            <p class="text-2xl font-bold text-white">Custom</p>
+            <p class="text-sm text-gray-400">pricing</p>
+
+          </div>
+          <ul class="text-sm text-[#d1d5db] text-left mb-6 space-y-2">
+            <li>✔ Unlimited SKUs</li>
+            <li>✔ Unlimited locations & vendors</li>
+            <li>✔ All ERP systems + custom development</li>
+            <li>✔ All logistics + white-label APIs</li>
+            <li>✔ CXO-level dashboards</li>
+            <li>✔ Multi-site rollout</li>
+            <li>✔ Enterprise implementation</li>
+            <li>✔ SLA-based support</li>
+            <li>✔ Dedicated success manager</li>
+          </ul>
+          <div class="text-xs text-gray-400 mt-4 p-2 bg-[#111827] rounded">
+            <strong>Setup:</strong> From ₹1,49,999 (milestone-based)
+          </div>
+        </div>
+        <button class="contact-sales bg-[#048AFF] text-black font-semibold py-3 rounded-lg hover:bg-blue-600 transition">Contact Sales</button>
+      </div>
+
+    </div>
+    
+    <!-- Add-On Options -->
+    <div class="mt-16">
+      <div class="bg-gradient-to-r from-[#1a202c] to-[#1f2937] rounded-xl p-8 max-w-6xl mx-auto mb-8">
+        <div class="text-center mb-8">
+          <h3 class="text-3xl font-bold text-white mb-4">Add-On Options</h3>
+          <p class="text-gray-300 text-lg">Enhance your plan with additional features and capacity</p>
+        </div>
+        
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">Additional SKUs</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹2,999</p>
+            <p class="text-sm text-gray-400 mb-4">per 1,000 SKUs/month</p>
+            <p class="text-xs text-gray-300">Scale your product catalog capacity</p>
+          </div>
+          
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">Additional Vendors</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹2,500</p>
+            <p class="text-sm text-gray-400 mb-4">per 10 vendors/month</p>
+            <p class="text-xs text-gray-300">Scale your vendor management capacity</p>
+          </div>
+          
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">Additional Locations</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹7,500</p>
+            <p class="text-sm text-gray-400 mb-4">per location/month</p>
+            <p class="text-xs text-gray-300">Expand to new facilities and sites</p>
+          </div>
+          
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">Extra Reporting</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹4,999</p>
+            <p class="text-sm text-gray-400 mb-4">per pipeline/month</p>
+            <p class="text-xs text-gray-300">Custom reporting modules</p>
+          </div>
+          
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">ERP Connectors</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹25,000</p>
+            <p class="text-sm text-gray-400 mb-4">per system/year</p>
+            <p class="text-xs text-gray-300">Connect your existing ERP systems</p>
+          </div>
+          
+          <div class="bg-[#111827] rounded-lg p-6">
+            <h4 class="text-[#048AFF] font-bold text-lg mb-4">Smart Alerts</h4>
+            <p class="text-2xl font-bold text-white mb-2">₹2,999</p>
+            <p class="text-sm text-gray-400 mb-4">per site/year</p>
+            <p class="text-xs text-gray-300">WhatsApp, Slack, Teams & Email</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-20 px-6 md:px-16 bg-[#1a1a1a]">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Why Choose advyo?</h2>
+      <p class="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+        We're transforming how businesses manage their supply chains through cutting-edge AI technology and deep industry expertise.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+        <div class="text-center">
+          <div class="text-[#048AFF] text-3xl font-bold mb-2">7 Days</div>
+          <p class="text-gray-400">Rapid Deployment</p>
+        </div>
+        <div class="text-center">
+          <div class="text-[#048AFF] text-3xl font-bold mb-2">25%</div>
+          <p class="text-gray-400">Average Cost Reduction</p>
+        </div>
+        <div class="text-center">
+          <div class="text-[#048AFF] text-3xl font-bold mb-2">Minimal</div>
+          <p class="text-gray-400">Technical Dependencies</p>
+        </div>
+      </div>
+      
+      <p class="text-gray-300 text-md leading-relaxed">
+        Built by supply chain professionals who understand business needs, not just technology. We believe powerful AI should be simple to use. That's why advyo works out-of-the-box for business users, integrates in weeks not months, and delivers insights from day one.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#0a0a0a] py-12 px-6 md:px-16 border-t border-gray-800">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h4 class="text-white font-semibold mb-4">Solutions</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#" class="hover:text-[#048AFF] transition">Demand Forecasting</a></li>
+            <li><a href="#" class="hover:text-[#048AFF] transition">Supply Chain Visibility</a></li>
+            <li><a href="#" class="hover:text-[#048AFF] transition">Risk Management</a></li>
+            <li><a href="#" class="hover:text-[#048AFF] transition">Analytics & Insights</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Company</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="#about" class="hover:text-[#048AFF] transition">About Us</a></li>
+            <li><a href="/careers.html" class="hover:text-[#048AFF] transition">Careers</a></li>
+            <li><a href="mailto:contact@advyo.in" class="hover:text-[#048AFF] transition">Contact</a></li>
+            <li><a href="/faq.html" class="hover:text-[#048AFF] transition">FAQ</a></li>
+          </ul>
+        </div>
+        
+        <div>
+          <h4 class="text-white font-semibold mb-4">Support</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
+            <li><a href="https://support.advyo.in" class="hover:text-[#048AFF] transition">Help Center</a></li>
+            <li><a href="https://docs.advyo.in" class="hover:text-[#048AFF] transition">Documentation</a></li>
+            <li><a href="https://developers.advyo.in" class="hover:text-[#048AFF] transition">Developer Portal</a></li>
+            <li><a href="https://status.advyo.in" class="hover:text-[#048AFF] transition">System Status</a></li>
+          </ul>
+        </div>
+        
+        <div class="md:order-last">
+          <h3 class="text-[#048AFF] font-bold text-xl mb-4 lowercase">advyo</h3>
+          <p class="text-gray-400 text-sm mb-4">AI-powered supply chain intelligence for modern businesses.</p>
+          <p class="text-gray-400 text-xs mb-2">1st Floor, A Square, Kuzhivelippady<br>Ernakulam, KL - 683561</p>
+          <p class="text-gray-400 text-xs">© 2025 Karpath Infotech Pvt Ltd</p>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div class="text-gray-400 text-sm mb-4 md:mb-0">
+          <a href="/privacy-policy.html" class="hover:text-[#048AFF] transition mr-6">Privacy Policy</a>
+          <a href="/terms.html" class="hover:text-[#048AFF] transition">Terms of Service</a>
+        </div>
+        <div class="text-gray-400 text-sm">
+          Made in India
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Subscription Modal -->
+  <div id="subscription-modal" class="modal fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+    <div class="bg-[#1f2937] p-8 rounded-xl shadow-lg max-w-md w-full mx-4 relative">
+      <button id="close-subscription-modal" class="absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+      
+      <div id="trial-content" class="text-center">
+        <h3 class="text-2xl font-bold text-white mb-4">Start Your Free Trial</h3>
+        <p class="text-gray-300 mb-6">Get full access to advyo for 14 days. No credit card required.</p>
+        
+        <form class="space-y-4">
+          <input type="email" placeholder="Work email" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <input type="text" placeholder="Company name" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <input type="text" placeholder="Full name" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          
+          <button type="button" disabled class="w-full bg-gray-600 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed">
+            Start Free Trial
+          </button>
+        </form>
+        
+        <p class="text-xs text-gray-400 mt-4">By signing up, you agree to our <a href="/terms.html" class="text-[#048AFF]">Terms</a> and <a href="/privacy-policy.html" class="text-[#048AFF]">Privacy Policy</a></p>
+      </div>
+      
+      <div id="subscription-content" class="text-center hidden">
+        <h3 class="text-2xl font-bold text-white mb-4">Subscribe to <span id="selected-plan">Basic</span></h3>
+        <p class="text-gray-300 mb-6">Start with a 14-day free trial, then <span id="plan-price">₹12,999</span>/month</p>
+        
+        <form class="space-y-4">
+          <input type="email" placeholder="Work email" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <input type="text" placeholder="Company name" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          
+          <button type="button" disabled class="w-full bg-gray-600 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed">
+            Start Free Trial
+          </button>
+        </form>
+        
+        <p class="text-xs text-gray-400 mt-4">14-day free trial • No credit card required • Cancel anytime</p>
+      </div>
+      
+      <div id="contact-content" class="text-center hidden">
+        <h3 class="text-2xl font-bold text-white mb-4">Contact Sales</h3>
+        <p class="text-gray-300 mb-6">Get a custom quote for Enterprise features and volume pricing</p>
+        
+        <form class="space-y-4">
+          <input type="email" placeholder="Work email" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <input type="text" placeholder="Company name" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <input type="text" placeholder="Phone number" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed">
+          <textarea placeholder="Tell us about your supply chain needs" rows="3" disabled class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-400 cursor-not-allowed resize-none"></textarea>
+          
+          <button type="button" disabled class="w-full bg-gray-600 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed">
+            Request Demo
+          </button>
+        </form>
+        
+        <p class="text-xs text-gray-400 mt-4">Our sales team will contact you within 24 hours</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // Modal elements
+    const modal = document.getElementById("subscription-modal");
+    const closeBtn = document.getElementById("close-subscription-modal");
+    const trialContent = document.getElementById("trial-content");
+    const subscriptionContent = document.getElementById("subscription-content");
+    const contactContent = document.getElementById("contact-content");
+    
+    // Button elements
+    const trialButtons = document.querySelectorAll(".start-trial");
+    const subscribeButtons = document.querySelectorAll(".subscribe-plan");
+    const contactButtons = document.querySelectorAll(".contact-sales");
+    const heroCTABtn = document.getElementById("hero-cta-btn");
+    const demoBtn = document.getElementById("demo-btn");
+    
+    // Billing toggle
+    const billingToggle = document.getElementById("billing-toggle");
+    const monthlyPrices = document.querySelectorAll(".monthly-price");
+    const annualPrices = document.querySelectorAll(".annual-price");
+    let isAnnual = false;
+
+    modal.style.display = "none";
+    
+    // Billing toggle functionality
+    billingToggle.addEventListener('click', () => {
+      isAnnual = !isAnnual;
+      const toggleButton = billingToggle.querySelector('span');
+      
+      if (isAnnual) {
+        toggleButton.classList.remove('translate-x-1');
+        toggleButton.classList.add('translate-x-6');
+        billingToggle.classList.remove('bg-gray-600');
+        billingToggle.classList.add('bg-[#048AFF]');
+        
+        monthlyPrices.forEach(price => price.classList.add('hidden'));
+        annualPrices.forEach(price => price.classList.remove('hidden'));
+      } else {
+        toggleButton.classList.remove('translate-x-6');
+        toggleButton.classList.add('translate-x-1');
+        billingToggle.classList.remove('bg-[#048AFF]');
+        billingToggle.classList.add('bg-gray-600');
+        
+        monthlyPrices.forEach(price => price.classList.remove('hidden'));
+        annualPrices.forEach(price => price.classList.add('hidden'));
+      }
+    });
+
+    // Disable trial buttons (no backend)
+    trialButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        alert('Free trial coming soon! Contact us at contact@advyo.in for early access.');
+      });
+    });
+
+    // Show subscription modal (placeholder)
+    subscribeButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const plan = button.dataset.plan;
+        const planName = plan.charAt(0).toUpperCase() + plan.slice(1);
+        const priceElement = button.closest('.package').querySelector(isAnnual ? '.annual-price' : '.monthly-price');
+        const price = priceElement ? priceElement.textContent : '₹39,999';
+        
+        document.getElementById('selected-plan').textContent = planName;
+        document.getElementById('plan-price').textContent = price;
+        showModal('subscription');
+      });
+    });
+
+    // Show contact modal
+    contactButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        showModal('contact');
+      });
+    });
+    
+    // Hero CTA button - opens trial modal
+    heroCTABtn.addEventListener("click", () => {
+      showModal('trial');
+    });
+    
+    // Demo button - shows demo information
+    demoBtn.addEventListener("click", () => {
+      alert('🎬 Live Demo Available!\n\nWant to see advyo in action?\n\n• Schedule a personalized demo\n• See real supply chain data\n• Experience AI insights live\n\nContact us at info@karpath.com for demo scheduling');
+    });
+
+    function showModal(type) {
+      // Hide all content
+      trialContent.classList.add('hidden');
+      subscriptionContent.classList.add('hidden');
+      contactContent.classList.add('hidden');
+      
+      // Show specific content
+      if (type === 'trial') {
+        trialContent.classList.remove('hidden');
+      } else if (type === 'subscription') {
+        subscriptionContent.classList.remove('hidden');
+      } else if (type === 'contact') {
+        contactContent.classList.remove('hidden');
+      }
+      
+      modal.style.display = "flex";
+    }
+
+    // Close modal
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", e => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+
+    window.addEventListener("keydown", e => {
+      if (e.key === "Escape") modal.style.display = "none";
+    });
+    
+    // Disable form submissions (no backend)
+    document.querySelectorAll('form').forEach(form => {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        alert('Platform launching soon! Contact info@karpath.com for early access.');
+      });
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+    const closeMenuBtn = document.getElementById('close-menu');
+    
+    function openMobileMenu() {
+      mobileMenu.classList.add('open');
+      mobileOverlay.classList.remove('hidden');
+    }
+    
+    function closeMobileMenu() {
+      mobileMenu.classList.remove('open');
+      mobileOverlay.classList.add('hidden');
+    }
+    
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    closeMenuBtn.addEventListener('click', closeMobileMenu);
+    mobileOverlay.addEventListener('click', closeMobileMenu);
+    
+    // Close mobile menu when clicking on links
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.tagName === 'A') {
+        closeMobileMenu();
+      }
+    });
+  </script>
+
+</body>
+</html>
 
