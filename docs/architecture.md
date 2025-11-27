@@ -39,8 +39,6 @@ This document outlines the streamlined system blueprint showcasing practical AWS
 
 Diagram: static client pages → Nginx → EC2 dev workspace → Q Developer-assisted refinement workflow.
 
-## Architecture (stable ASCII diagram)
-
 ```
 +-----------------------------------------------+
 |                CLIENT LAYER                   |
