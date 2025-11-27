@@ -37,5 +37,33 @@ This document outlines the streamlined system blueprint showcasing practical AWS
 
 ## 🔹 Architecture Diagram (Text Representation)
 
-Client → Nginx → EC2 → Q Developer Workflow
+Diagram: static client pages → Nginx → EC2 dev workspace → Q Developer-assisted refinement workflow.
+
+## Architecture (stable ASCII diagram)
+
+```
++-----------------------------------------------+
+|                CLIENT LAYER                   |
+|    Static HTML / Inline CSS / Inline JS       |
++-----------------------------------------------+
+                     |
+                     v
++-----------------------------------------------+
+|               NGINX WEB SERVER                |
+|    Serves static assets from /var/www/html    |
++-----------------------------------------------+
+                     |
+                     v
++-----------------------------------------------+
+|               AWS EC2 INSTANCE                |
+|  Ubuntu + VS Code Remote SSH (dev workspace)  |
++-----------------------------------------------+
+                     |
+                     v
++-----------------------------------------------+
+|          Q DEVELOPER + MANUAL WORKFLOW        |
+|   UI refinement, HTML/CSS cleanup, exports    |
++-----------------------------------------------+
+```
+
 
