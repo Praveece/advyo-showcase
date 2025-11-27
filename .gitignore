@@ -1,1 +1,32 @@
+# Node modules (if any local script tooling is used)
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS / Editor junk
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# Build artifacts if any
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.log
+
+# Screen recordings exports (if you add raw videos)
+*.mp4
+*.mov
+*.webm
+
+# Environment files (if ever added accidentally)
+.env
+.env.local
 
