@@ -76,7 +76,7 @@ Only safe, non-sensitive components are provided.
 
 ---
 
-## 6. Why This AWS Setup Strengthens the Hackathon Submission
+## 6. Cloud Infra Setup
 
 - Real cloud-based development (EC2 + Q Developer synergy)  
 - Production-style hosting (Nginx + domain + SSL)  
