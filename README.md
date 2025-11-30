@@ -7,7 +7,7 @@ Backend logic and authenticated dashboards remain private; only safe screenshots
 ---
 
 ## What this repo contains
-- `src/` — static public pages (homepage, login, FAQ)
+- `src/` — static public pages (homepage, login, FAQ, etc)
 - `assets/` — screenshots and demo recordings
 - `docs/` — documentation files
   - `docs/architecture.md`
@@ -37,12 +37,13 @@ Open any file from `src/` directly in your browser:
 - `index.html`
 - `login.html`
 - `faq.html`
+- -
 
 No build step required.
 
 ---
 
-## Why this submission fits the hackathon
+## About the repo
 - Demonstrates **Amazon Q Developer** usage for UI refinement  
 - Uses **AWS EC2 + Nginx** for hosting and workflow  
 - Provides evidence (screenshots + demo video) linked in repo  
