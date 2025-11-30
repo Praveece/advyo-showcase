@@ -84,6 +84,46 @@
       transform: translateX(0);
     }
     
+    /* Tooltip styles */
+    .tooltip {
+      position: relative;
+    }
+    .tooltip::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      bottom: 120%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+      border: 1px solid #048AFF;
+      z-index: 1000;
+    }
+    .tooltip::before {
+      content: '';
+      position: absolute;
+      bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #048AFF;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s;
+    }
+    .tooltip:hover::after,
+    .tooltip:hover::before {
+      opacity: 1;
+      visibility: visible;
+    }
+    
     /* Mobile fixes */
     @media (max-width: 768px) {
       [data-aos] {
@@ -557,6 +597,23 @@
         
         <p class="text-xs text-gray-400 mt-4">Our sales team will contact you within 24 hours</p>
       </div>
+      
+      <div id="access-content" class="text-center hidden">
+        <h3 class="text-2xl font-bold text-white mb-4">Request Access</h3>
+        <p class="text-gray-300 mb-6">Access opens after approval. Submit your details to get early access.</p>
+        
+        <form class="space-y-4">
+          <input type="email" placeholder="Work email" class="w-full px-4 py-3 bg-[#1f2937] border border-gray-600 rounded-lg text-white focus:border-[#048AFF] focus:outline-none">
+          <input type="text" placeholder="Company name" class="w-full px-4 py-3 bg-[#1f2937] border border-gray-600 rounded-lg text-white focus:border-[#048AFF] focus:outline-none">
+          <input type="text" placeholder="Full name" class="w-full px-4 py-3 bg-[#1f2937] border border-gray-600 rounded-lg text-white focus:border-[#048AFF] focus:outline-none">
+          
+          <button type="button" disabled class="w-full bg-gray-600 text-gray-400 font-semibold py-3 rounded-lg cursor-not-allowed">
+            Request Access
+          </button>
+        </form>
+        
+        <p class="text-xs text-gray-400 mt-4">We'll review your request and contact you within 24 hours</p>
+      </div>
     </div>
   </div>
 
@@ -568,6 +625,7 @@
     const trialContent = document.getElementById("trial-content");
     const subscriptionContent = document.getElementById("subscription-content");
     const contactContent = document.getElementById("contact-content");
+    const accessContent = document.getElementById("access-content");
     
     // Button elements
     const trialButtons = document.querySelectorAll(".start-trial");
@@ -636,9 +694,9 @@
       });
     });
     
-    // Hero CTA button - opens trial modal
+    // Hero CTA button - show access modal
     heroCTABtn.addEventListener("click", () => {
-      showModal('trial');
+      showModal('access');
     });
     
     // Demo button - shows demo information
@@ -651,6 +709,7 @@
       trialContent.classList.add('hidden');
       subscriptionContent.classList.add('hidden');
       contactContent.classList.add('hidden');
+      accessContent.classList.add('hidden');
       
       // Show specific content
       if (type === 'trial') {
@@ -659,6 +718,8 @@
         subscriptionContent.classList.remove('hidden');
       } else if (type === 'contact') {
         contactContent.classList.remove('hidden');
+      } else if (type === 'access') {
+        accessContent.classList.remove('hidden');
       }
       
       modal.style.display = "flex";
@@ -715,4 +776,3 @@
 
 </body>
 </html>
-
