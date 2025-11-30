@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - advyo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+    .faq-item {
+      transition: all 0.3s ease;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-answer.active {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center py-6 px-6 md:px-16 border-b border-gray-800">
+    <div>
+      <h1 class="text-3xl md:text-4xl font-bold text-[#048AFF] tracking-wide lowercase">
+        <a href="/">advyo</a>
+      </h1>
+    </div>
+    <nav class="flex items-center space-x-6">
+      <a href="/#about" class="text-gray-300 hover:text-[#048AFF] transition">About</a>
+      <a href="/login.html" class="bg-[#048AFF] text-black px-3 py-1.5 rounded-md text-sm font-medium hover:bg-blue-600 transition">Login</a>
+    </nav>
+  </header>
+
+  <!-- FAQ Content -->
+  <section class="flex-1 py-20 px-6 md:px-16 max-w-4xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        Get answers to common questions about advyo's AI-powered supply chain solutions.
+      </p>
+    </div>
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+      
+      <!-- FAQ 1 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">What is advyo and how does it work?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">advyo is an AI-powered supply chain intelligence platform that helps businesses optimize their operations through predictive analytics, real-time visibility, and automated decision-making. Our platform integrates with your existing systems to provide demand forecasting, inventory optimization, risk management, and comprehensive analytics dashboards.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">How accurate is advyo's demand forecasting?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Our AI models achieve up to 95% accuracy in demand forecasting by analyzing historical data, market trends, seasonal patterns, and external factors. The accuracy improves over time as the system learns from your specific business patterns and receives more data.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">What systems does advyo integrate with?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">advyo offers comprehensive integrations with ERP systems (SAP, Tally, Zoho, Oracle, Microsoft Dynamics, QuickBooks), logistics providers (Delhivery, BlueDart, FedEx, DHL, Ecom Express), e-commerce platforms (Shopify, Amazon, Flipkart), and warehouse management systems. We provide pre-built connectors for popular business systems across different markets.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">How fast can I get started with advyo?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Implementation takes days, not months. You'll see first insights within 48 hours and be fully operational in 7-14 days. Our streamlined process includes data integration, system configuration, and user training. While minimal IT involvement is needed, proper setup ensures optimal performance from day one.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">Is my data secure with advyo?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Yes, we implement enterprise-grade security including end-to-end encryption, SOC 2 compliance, regular security audits, and role-based access controls. Your data is stored in secure cloud infrastructure with 99.9% uptime guarantee and regular backups.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">What kind of ROI can I expect?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Our customers typically see 15-30% reduction in inventory costs, 25% improvement in forecast accuracy, and 20% reduction in stockouts within the first 6 months. Most organizations achieve full ROI within 12-18 months of implementation.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">Do you offer training and support?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Yes, we provide comprehensive onboarding, user training sessions, documentation, video tutorials, and ongoing support. Enterprise customers get dedicated account managers and 24/7 technical support. We also offer regular webinars and best practice sessions.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">Can I customize the platform for my industry?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Absolutely. advyo is designed to be industry-agnostic but can be customized for specific sectors like manufacturing, retail, healthcare, automotive, and more. We offer industry-specific templates, KPIs, and workflows to match your business requirements.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">Will advyo work with our existing business processes?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Yes, advyo is designed to adapt to your current workflows, not replace them. Our platform integrates seamlessly with your existing systems and can be configured to match your business rules, approval processes, and operational procedures. You keep working the way you're comfortable with, while gaining AI-powered insights.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">Do I need technical skills to use advyo?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">No coding required! advyo is designed for business users with intuitive dashboards and guided workflows. While initial setup involves some technical configuration, our team handles the complex parts. Your supply chain managers can operate the platform independently after our comprehensive training.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">What if our supply chain is too complex for a standard solution?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">Complex supply chains are exactly what advyo excels at. Our AI thrives on complexity - the more data points, suppliers, and variables you have, the more valuable insights we can provide. We've successfully implemented solutions for multi-location, multi-vendor, multi-product businesses with intricate logistics networks.</p>
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="faq-item bg-[#1f1f1f] border border-gray-800 rounded-xl">
+        <button class="faq-question w-full text-left p-6 flex justify-between items-center hover:bg-[#252525] transition">
+          <h3 class="text-lg font-semibold text-white">How is advyo different from other supply chain platforms?</h3>
+          <svg class="faq-icon w-5 h-5 text-[#048AFF] transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer px-6 pb-6">
+          <p class="text-gray-400">advyo is built for growing businesses while competitors focus on large enterprises. We offer pre-built integrations with popular business systems and logistics providers, transparent pricing without hidden costs, and rapid implementation designed for companies that need results quickly without massive IT projects.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Contact CTA -->
+    <div class="text-center mt-16 bg-[#1f1f1f] border border-gray-800 rounded-xl p-8">
+      <h3 class="text-2xl font-bold text-white mb-4">Still Have Questions?</h3>
+      <p class="text-gray-400 mb-6">Every supply chain is unique. Let's discuss how advyo can address your specific challenges and goals.</p>
+      <a href="mailto:contact@advyo.in" class="bg-[#048AFF] text-black px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 transition inline-block">
+        Schedule a Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#1a1a1a] text-center py-6 text-sm text-gray-500 border-t border-gray-800">
+    <div class="mb-4">
+      <a href="/privacy-policy.html" class="hover:text-[#048AFF] transition mr-6">Privacy Policy</a>
+      <a href="/terms.html" class="hover:text-[#048AFF] transition">Terms of Service</a>
+    </div>
+    © 2025 Karpath Infotech Pvt Ltd
+  </footer>
+
+  <script>
+    // FAQ Accordion functionality
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const faqItem = button.parentElement;
+        const answer = faqItem.querySelector('.faq-answer');
+        const icon = button.querySelector('.faq-icon');
+        
+        // Close all other FAQ items
+        document.querySelectorAll('.faq-item').forEach(item => {
+          if (item !== faqItem) {
+            item.querySelector('.faq-answer').classList.remove('active');
+            item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+          }
+        });
+        
+        // Toggle current FAQ item
+        answer.classList.toggle('active');
+        const isActive = answer.classList.contains('active');
+        icon.style.transform = isActive ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    });
+  </script>
+
+</body>
+</html>
